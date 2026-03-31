@@ -1,0 +1,231 @@
+/* Main Background */
+.page-wrapper {
+  /* min-height: 100vh; */
+  height: 92vh;
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 🔥 prevents vertical cut */
+  padding: 10px 0;
+  font-family: "Inter", sans-serif;
+}
+
+.home-container {
+  height: 92vh;
+  width: 95%;
+  background-color: #f9fafb;
+  padding: 40px 30px; /* 🔥 reduced */
+  font-family: "Segoe UI", sans-serif;
+  border-radius: 16px;
+  overflow: visible; /* 🔥 FIXED (was hidden) */
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  margin-bottom: 30px; /* 🔥 reduced */
+}
+
+.hero-section h1 {
+  font-size: 36px; /* slightly smaller */
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #0a73eb;
+}
+
+.hero-section p {
+  font-size: 16px;
+  max-width: 400px;
+  margin: 0 auto 20px auto;
+  color: grey;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* 🔥 reduced */
+}
+
+.hero-buttons button {
+  background: transparent; /* 🔥 FIXED gradient issue */
+  color: #0a73eb;
+  border: 1px solid #0a73eb;
+  padding: 10px 22px; /* 🔥 smaller */
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background-color: var(--color-primary-dark);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Features Section */
+.features-section {
+  display: grid; /* 🔥 switched to grid (better fit) */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; /* 🔥 reduced */
+}
+
+/* Feature Card */
+.features-section .feature-card {
+  box-sizing: border-box;
+  background: #0a73eb;
+  border-radius: 16px;
+  padding: 2px; /* 🔥 reduced */
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+/* Chart Card */
+.chart-card {
+  height: 220px; /* keep consistent */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center chart */
+  justify-content: center;
+}
+
+/* Chart Title */
+.chart-card h4 {
+  color: #f2f5f8; /* 🔥 visible on light bg */
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* Chart fill */
+.chart-card > div {
+  flex: 1;
+  min-width: 0; /* 🔥 prevents overflow */
+}
+
+/* Text inside cards */
+.feature-card h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: white;
+}
+
+.feature-card p {
+  font-size: 13px;
+  color: #e0f2fe;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2x2 */
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.metric-card {
+  width: 100%;
+  min-width: 0; /* 🔥 VERY IMPORTANT (prevents overflow in grid) */
+  box-sizing: border-box;
+
+  background: linear-gradient(135deg, #0a73eb, #2563eb);
+  padding: 14px; /* slightly reduced */
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 90px; /* 🔥 keeps cards compact */
+  overflow: hidden; /* prevents spill */
+}
+
+.metric-card:hover {
+  transform: translateY(-3px);
+}
+
+.metric-title {
+  font-size: 13px;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+
+.metric-value {
+  font-size: 22px;
+  font-weight: 600;
+}
+/* Responsive */
+@media (max-width: 900px) {
+  .features-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 5px;
+  width: 100%;
+}
+
+.kpi-card {
+  min-width: 0; /* 🔥 prevents overflow */
+  padding: 5px;
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, #0a73eb, #2563eb);
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.kpi-label {
+  font-size: 8px;
+  text-align: center;
+}
+
+.kpi-value {
+  font-size: 16px; /* reduced from 20+ */
+  font-weight: 600;
+}
+
+.donut-wrapper {
+  /* position: absolute; */
+  width: 60%;
+  height: 60%; 
+  /* background-color: #e0f2fe; */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.donut-center {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  gap: 2px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #0a73eb;
+  
+}
+
+/* .donut-center h3 {
+  font-size: 10px; 
+}
+
+.donut-center p {
+  font-size: 5px;
+} */

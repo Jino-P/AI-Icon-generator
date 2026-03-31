@@ -1,0 +1,124 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary)); */
+  background-color: #d1d5db;
+}
+
+.login-container {
+  width: 90%;
+  max-width: 900px;
+  display: flex;
+  background: var(--color-bg-light);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* stack panels on smaller screens */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+  .login-left,
+  .login-card {
+    width: 100%;
+  }
+}
+
+/* Left Side */
+.login-left {
+  width: 50%;
+  /* background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary)); */
+  background-color: darkgrey;
+  color: white;
+  padding: 50px;
+}
+
+.login-left h1 {
+  margin-bottom: 20px;
+}
+
+.login-left p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.login-left ul {
+  list-style: none;
+  padding: 0;
+}
+
+.login-left li {
+  margin-bottom: 10px;
+}
+
+/* Right Side */
+.login-card {
+  width: 50%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;          /* keep card distinct from container */
+  color: var(--color-text);
+}
+
+.login-card h2 {
+  margin-bottom: 10px;
+}
+
+.login-subtitle {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.login-input {
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.login-button {
+  padding: 12px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-button:hover {
+  background: var(--color-primary-dark);
+}
+
+.error-message {
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.login-footer {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.login-footer span {
+  color: var(--color-primary);
+
+  cursor: pointer;
+  font-weight: 600;
+}

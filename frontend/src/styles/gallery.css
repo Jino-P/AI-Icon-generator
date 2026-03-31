@@ -1,0 +1,165 @@
+.gallery-container{
+  /* max-width:1200px; */
+  width: 95%;
+  height: 92vh;
+  margin:auto;
+  padding:40px 20px;
+  background:#f9fafb;
+  border-radius:16px;
+  overflow-y: auto;
+}
+.page-wrapper {
+  height: 100vh;
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  overflow-y: auto;
+}
+.gallery-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.gallery-header h1{
+  font-size:28px;
+  font-weight:600;
+  color:#1f2937;
+}
+
+.download-all-btn{
+  background:#2563eb;
+  color:white;
+  border:none;
+  padding:10px 18px;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:500;
+}
+
+.download-all-btn:hover{
+  background:#1d4ed8;
+}
+
+.loading{
+  text-align:center;
+  padding:60px;
+  color:#6b7280;
+}
+
+.generation-group{
+  margin-bottom:40px;
+}
+
+.generation-header{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:15px;
+}
+
+.generation-header h3{
+  font-size:18px;
+  color:#1e3a8a;
+}
+
+.generation-header span{
+  font-size:14px;
+  color:#6b7280;
+}
+
+.image-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:20px;
+  overflow: hidden;
+}
+
+.image-card{
+  background:white;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  transition:transform 0.2s;
+  position:relative;
+}
+
+.image-card:hover{
+  transform:translateY(-4px);
+}
+
+.image-card img{
+  width:100%;
+  height:160px;
+  object-fit:contain;
+  background:#f3f4f6;
+  cursor:pointer;
+}
+
+.image-overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  background:rgba(0,0,0,0.45);
+  opacity:0;
+  transition:opacity 0.2s;
+}
+
+.image-card:hover .image-overlay{
+  opacity:1;
+}
+
+.image-overlay button{
+  border:none;
+  padding:8px 12px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:13px;
+}
+
+.edit-btn{
+  background:#2563eb;
+  color:white;
+}
+
+.download-btn{
+  background:white;
+  color:#111827;
+}
+
+.image-caption{
+  padding:10px;
+  font-size:13px;
+  color:#374151;
+  text-align:center;
+}
+
+.modal{
+  position:fixed;
+  inset:0;
+  /* background:rgba(0,0,0,0.7); */
+  background-color: darkgrey;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+}
+
+.modal-content{
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  max-width:600px;
+}
+
+.modal-content img{
+  width:100%;
+}
