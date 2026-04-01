@@ -19,3 +19,6 @@ beautifulsoup4
 colorthief
 replicate
 webcolors
+sendgrid
+cloudinary
+gunicorn
