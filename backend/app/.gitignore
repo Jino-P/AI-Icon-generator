@@ -24,7 +24,7 @@ backend/venv/
 # Generated files (your case)
 generated_images/
 backend/app/models/
-models/
+models/u2net.onnx
 
 # Build
 dist/
