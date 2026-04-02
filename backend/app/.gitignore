@@ -23,6 +23,8 @@ backend/venv/
 
 # Generated files (your case)
 generated_images/
+backend/app/models/
+models/
 
 # Build
 dist/

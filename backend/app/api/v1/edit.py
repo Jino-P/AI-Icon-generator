@@ -5,7 +5,7 @@ import io
 import os
 import tempfile
 import logging
-from rembg import remove
+from rembg import remove, new_session
 from PIL import Image
 
 from app.api.deps import get_db, get_current_user
@@ -15,14 +15,14 @@ from app.integrations.replicate_client import ReplicateImageGenerator
 
 router = APIRouter(prefix="/api", tags=["Edit"])
 logger = logging.getLogger(__name__)
-
+session = new_session("u2net", model_path="app/models/u2net.onnx")
 # -------------------- REMOVE BACKGROUND --------------------
 @router.post("/remove-bg")
 async def remove_background(file: UploadFile = File(...)):
     try:
         file_bytes = await file.read()
         logger.info(f"Received file for background removal: {file.filename}, size: {len(file_bytes)} bytes")
-        output_image = remove(file_bytes)
+        output_image = remove(file_bytes, session=session)
         logger.info(f"Background removal successful for file: {file.filename}, output size: {len(output_image)} bytes")
         img = Image.open(io.BytesIO(output_image))
         if img.mode != "RGBA":
