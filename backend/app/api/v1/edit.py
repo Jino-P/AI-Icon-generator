@@ -15,7 +15,7 @@ from app.integrations.replicate_client import ReplicateImageGenerator
 
 router = APIRouter(prefix="/api", tags=["Edit"])
 logger = logging.getLogger(__name__)
-session = new_session("u2net", model_path="app/models/u2netp.onnx")
+session = new_session("u2netp")
 # -------------------- REMOVE BACKGROUND --------------------
 @router.post("/remove-bg")
 async def remove_background(file: UploadFile = File(...)):
